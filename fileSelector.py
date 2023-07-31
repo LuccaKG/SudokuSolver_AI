@@ -1,4 +1,4 @@
-# -*- coding: ISO-8859-1 
+# -*- coding: ISO-8859-1
 
 import tkinter
 from tkinter import *
@@ -6,7 +6,7 @@ from tkinter import ttk
 from tkinter import filedialog
 
 win = Tk()
-win.title('Sudoku Solver')
+win.title("Sudoku Solver")
 
 
 class WindowCreator:
@@ -26,16 +26,18 @@ class WindowCreator:
 
     def get_sudoku_file(self):
         # create 'open file' option
-        self.sdk_path = filedialog.askopenfilename(title="Select Sudoku Board image",
-                                                  filetypes=(("all files", "*.*"), ("text files", "*.txt")))
+        self.sdk_path = filedialog.askopenfilename(
+            title="Select Sudoku Board image",
+            filetypes=(("all files", "*.*"), ("text files", "*.txt")),
+        )
         self.sdk_str = tkinter.StringVar()
-        self.sdk_label = tkinter.Label(self.win, textvariable=self.sdk_str, fg='red')
+        self.sdk_label = tkinter.Label(self.win, textvariable=self.sdk_str, fg="red")
         self.sdk_label.grid(row=3, column=3)
         self.sdk_str.set("")
         if self.sdk_path:
             # I put several spaces so that, when opening another file using the same button, the StringVar do not overlap
             # visually
-            self.sdk_str.set(f"                              {self.sdk_path}                                            ")
+            self.sdk_str.set(self.sdk_path.center(30))
 
         self.b2.grid(row=20, column=3)
 

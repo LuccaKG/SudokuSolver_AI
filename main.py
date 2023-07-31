@@ -6,7 +6,8 @@ import fileSelector as fs
 file_sel = fs.WindowCreator(fs.win)
 file_sel.buttons_creator()
 fs.win.mainloop()
- 
-imgProcessing.Mkdir() # create folder where splitted images will be stored
-imgProcessing.ImgProc(file_sel.sdk_path) # run image processing applying threshold and split
 
+imgProcessing.Mkdir()  # create folder where splitted images will be stored
+imgProcessing.ImgProc(
+    file_sel.sdk_path
+)  # run image processing applying threshold and split
