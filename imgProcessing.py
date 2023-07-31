@@ -27,4 +27,3 @@ def ImgProc(path):
     cv2.imwrite(f'{file_name}.jpg', thresh)
     split_image(f"{file_name}.jpg", 9, 9, True, True, True, directory)
    
-
