@@ -12,9 +12,11 @@ today = dt.date.today()
 actual_dir = pathlib.Path().resolve()  # store the current path
 directory = os.path.join("C:\\", actual_dir, f"Sudoku cells - {today}")
 
+
 def Mkdir():
     if not os.path.exists(directory):
         os.mkdir(directory)
+
 
 # apply pre-processing to image and split each cell from puzzle; save splitted cells on a directory
 file_name = "ThresholdedPuzzle"
@@ -26,5 +28,3 @@ def ImgPreProc(path:str):
     invert = 255 - thresh
     cv2.imwrite(f'{file_name}.jpg', invert)
     split_image(f"{file_name}.jpg", 9, 9, True, True, True, directory)
-   
-
