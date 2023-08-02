@@ -24,7 +24,7 @@ def PuzzleRec() -> list:
         if digit != "": # verify if it isn't a blankspace
             digits_list.append(int(digit))
         else: # fill blankspaces as - 
-            digits_list.append("-")
+            digits_list.append(0)
 
 
     # divides the list of recognized digits into sublists, where each sublist represents a puzzle line
@@ -32,10 +32,3 @@ def PuzzleRec() -> list:
     digits_grouped = [digits_list[i:i + n] for i in range(0, len(digits_list), n)]
 
     return digits_grouped
-
-def PrintPuzzle(PuzzleListed:list):
-    for row in PuzzleListed:
-        print(*row)
-
-
-

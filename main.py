@@ -2,6 +2,7 @@
 import imgPreProcessing as ipp
 import fileSelector as fs
 import puzzleRecognition as pr
+import solver
 
 # open window to select original sudoku puzzle
 file_sel = fs.WindowCreator(fs.win)
@@ -11,11 +12,11 @@ fs.win.mainloop()
 ipp.Mkdir() # create folder where splitted images will be stored
 ipp.ImgPreProc(file_sel.sdk_path) # run image processing applying threshold and split
 
-print("Solver is running! Please wait.")
+print("\nSolver is running! Please wait.\n")
 puzzle = pr.PuzzleRec() # store cell values (already recognized)
 
-pr.PrintPuzzle(puzzle) # print the recognized puzzle
-
+solver.PrintPuzzle(puzzle) # print the recognized puzzle
+solver.PrintSolution()
 
 
 
