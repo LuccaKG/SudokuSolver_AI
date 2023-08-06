@@ -16,10 +16,8 @@ def PuzzleRec() -> list:
 
     digits_list = [] # creating a list to populate with recognized digits 
     # Running Tesseract OCR to recognize digits and blankspaces
-
     for filename in img_list:
         img = cv2.imread(f"{imgPreProcessing.directory}\{filename}")
-        img = img[int(0.2*img.shape[0]):img.shape[0], int(0.1*img.shape[0]):int(0.9*img.shape[0])] # crop image to avoid noises on borders
         digit = pytesseract.image_to_string(img, config=custom_config)
         if digit != "": # verify if it isn't a blankspace
             digits_list.append(int(digit))

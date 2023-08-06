@@ -3,6 +3,7 @@ import imgPreProcessing as ipp
 import fileSelector as fs
 import puzzleRecognition as pr
 import solver
+import sys
 
 # open window to select original sudoku puzzle
 file_sel = fs.WindowCreator(fs.win)
@@ -17,6 +18,9 @@ puzzle = pr.PuzzleRec() # store cell values (already recognized)
 
 solver.PrintPuzzle(puzzle) # print the recognized puzzle
 solver.PrintSolution()
+
+# prevents CMD from closing
+input("Press Enter to close...")
 
 
 
